@@ -1,3 +1,5 @@
+#this is an algorithm that takes an input (A) in matrice form and tests if the matrix is singula.
+
 import numpy as np
 
 def isSingular(A) :
