@@ -1,4 +1,4 @@
-#this is an algorithm that takes an input (A) in matrice form and tests if the matrix is singula.
+#this is an algorithm that takes an input (A) in matrice form and tests if the matrix is singular.
 
 import numpy as np
 
