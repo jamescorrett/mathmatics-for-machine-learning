@@ -41,9 +41,9 @@ def gsBasis(A) :
         for j in range(i) :
             B[:, i] = B[:, i] - B[:, i] @ B[:, j] * B[:, j]
         if la.norm(B[:, i]) > verySmallNumber :
-            B[:, 2] = B[:, i] / la.norm(B[:, i])
+            B[:, i] = B[:, i] / la.norm(B[:, i])
         else :
-            B[:, 2] = np.zeros_like(B[:, i])
+            B[:, i] = np.zeros_like(B[:, i])
             
     return B
 
