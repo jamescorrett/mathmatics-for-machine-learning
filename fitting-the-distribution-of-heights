@@ -1,4 +1,3 @@
-
 def f (x,mu,sig) :
     return np.exp(-(x-mu)**2/(2*sig**2)) / np.sqrt(2*np.pi) / sig
 
