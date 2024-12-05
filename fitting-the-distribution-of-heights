@@ -1,0 +1,17 @@
+
+def f (x,mu,sig) :
+    return np.exp(-(x-mu)**2/(2*sig**2)) / np.sqrt(2*np.pi) / sig
+
+def dfdmu (x,mu,sig) :
+    return f(x, mu, sig) * (x - mu) / sig**2
+
+def dfdsig (x,mu,sig) :
+    return f(x, mu, sig) * (-1 / sig + (x - mu)**2 / sig**3)
+
+def steepest_step (x, y, mu, sig, aggression) :
+    J = np.array([
+        -2 * (y - f(x, mu, sig)) @ dfdmu(x,mu,sig),
+        -2 * (y - f(x, mu, sig)) @ dfdsig(x, mu, sig)
+    ])
+    step = -J * aggression
+    return step
